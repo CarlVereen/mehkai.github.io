@@ -109,6 +109,12 @@ function initializeMap() {
 
   var mapOptions = {
     disableDefaultUI: true,
+     scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    draggable: false,
+    
     
   };
 
@@ -186,11 +192,7 @@ function initializeMap() {
 
     //var info;
 
-    var carl = {
-       "Denver" : "I live here and work at Sprint",
-        "Flagstaff": "I finished School here at NAU, and worked for Apartmentlife",
-        "Tucson": "I started my career here, and started my education at the U of A"
-    };
+    
 
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
@@ -212,6 +214,14 @@ function initializeMap() {
     infoWindow.open(map, marker);
    
     console.log(marker.info);
+    });
+
+    google.maps.event.addListener(map, 'click', function() {
+
+      initializeMap();
+
+
+
     });
 
     // this is where the pin actually gets added to the map.
