@@ -114,7 +114,7 @@ function initializeMap() {
     mapTypeControl: false,
     scaleControl: false,
     draggable: false,
-    
+
     
   };
 
@@ -154,17 +154,7 @@ function initializeMap() {
 
   var info;
 
-  function locationInfo(name) {
-      var infoLocations = {
-        "Denver" : "I live here and work at Sprint",
-        "Flagstaff": "I finished School here at NAU, and worked for Apartmentlife",
-        "Tucson": "I started my career here, and started my education at the U of A"
-      };
-       info = infoLocations["name"];
-       console.log(info);
-
-      return info;
-    }
+  
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
   placeData is the object returned from search results containing information
@@ -185,7 +175,7 @@ function initializeMap() {
       title: name + ", Click marker for more information",
       info: {
         "Denver" : "I live here and work at Sprint",
-        "Flagstaff": "I finished School here at NAU, and worked for Apartmentlife",
+        "Flagstaff": "<p>I finished School here at NAU," + " and worked for Apartmentlife</p>",
         "Tucson": "I started my career here, and started my education at the U of A"
         }
     });
@@ -198,7 +188,8 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-     content: marker.info[name]
+     content: marker.info[name],
+     maxWidth: 200
     });
 
     // hmmmm, I wonder what this is about...
