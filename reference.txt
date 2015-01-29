@@ -1,0 +1,17 @@
+google maps api resources
+https://developers.google.com/maps/documentation/javascript/reference#InfoWindow
+
+w3 schools javascript resources
+http://www.w3schools.com/js/default.asp
+
+Stack Overflow for google map questions
+http://stackoverflow.com/
+
+flexbox reference for a quick review
+http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+Mozilla Developer JavaScript Reference
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+Tooltip help
+http://www.menucool.com/tooltip/css-tooltip
