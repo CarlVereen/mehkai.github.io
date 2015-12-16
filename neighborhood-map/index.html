@@ -1,39 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Carl Vereen's Neighborhood Map Project</title>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>My Life in Tokyo</title>
+      <link href="css/style.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
-		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
-		<link href="css/style.css" rel="stylesheet">
 
-	</head>
-	<body>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project 5</a>
+        </div>
 
-		<div class="yelp-list">
-			<div class="search-yelp">
-				<form class="input-group" data-bind="submit: updateYelpResults">
-		      <input type="text" class="form-control" data-bind="value: searchTerm">
-		      <span class="input-group-btn">
-		        <button class="btn btn-danger" type="button" data-bind="click: updateYelpResults">Yelp!</button>
-		      </span>
-		    </form>
-			</div>
-			<ul class="results"></ul>
-		</div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" data-bind="foreach: menu">
+                <li data-bind="css: { active: $data == $root.chosenMenuId()}">
+                  <a data-bind="text: name,
+                           click: $root.goToMenu"></a>
+                </li>
+            </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <!-- <h5 data-bind="text: query"></h5> -->
+              <input id="search "type="search" name="search" class="form-control" placeholder="Search" data-bind="textInput: query">
+            </div>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+            <div  class="col-xs-6" id="sideList" data-bind="">
+              <ul class='list-group' data-bind="foreach: filteredPosts">
+                <button type="button" class="list-group-item" data-bind="visible: showPost, event: {mouseover: showListInfo, mouseout: hideListInfo}"><span class="badge" >Rating <span data-bind="text: rating"></span></span><img width="100px" height="100px" data-bind="attr:{ src: image, alt: postName }"  /><a data-bind="text: postName, attr: { href: webPage }" ></a></button>
+              </ul>
+             </div>
+             <div class="col-xs-6 side-bar outer">
+               <div  class="fixed col-xs-12" id="map" >
 
-		<div id="map-canvas"></div>
+               </div>
+             </div>
+      </div> <!--/ row 1 -->
+    </div><!-- /.container  for map and lists -->
 
-	  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-		<script src="bower_components/knockout/dist/knockout.js"></script>
-  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-  	<script src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
-  	<script src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
-  	<script src="js/app-engine.js"></script>
-  	<script src="js/model.js"></script>
-	</body>
-</html>
+
+    <script type="text/javascript"
+    	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD61th9_qlpEsR7QjNn4UrpnswZgEReK3E">
+    </script>
+    <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+    <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    <script src="js/googleapi.js"></script>
+
+      </body>
+    </html>
