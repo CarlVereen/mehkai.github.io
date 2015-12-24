@@ -32,8 +32,6 @@ $(function() {
              expect(feed.url.length).not.toBe(0);
            });
          });
-
-
         /* a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
@@ -50,7 +48,6 @@ $(function() {
           */
          it('have an assigned ID that matches their index in the array', function() {
             allFeeds.forEach(function(feed, key) {
-
                 expect(feed.id).toBeDefined();
                 expect(key).toBe(feed.id);
             });
@@ -60,32 +57,13 @@ $(function() {
 
     /* a new test suite named for the Menu */
     describe('The Menu', function() {
-      var firstTitle,
-          secondTitle;
-
-        //set up test variables
-        beforeEach(function(done) {
-          loadFeed(0, done);
-          firstTitle = $('.header-title').text();
-          loadFeed(1, done);
-
-        });
-        /* a test that verifies a header title change
-         * that matches the menu selected
-         */
-        it('selection changes the header title', function() {
-          secondTitle = $('.header-title').text();
-
-          expect(secondTitle).not.toBe(firstTitle);
-        });
-
+      var  $body;
 
         /* a test that ensures the menu element is
          * hidden by default.
          */
          it('element is hidden by default', function() {
-           var $body = $('body').attr('class');
-
+           $body = $('body').attr('class');
            expect($body).toBe('menu-hidden');
          });
 
@@ -95,19 +73,18 @@ $(function() {
           it('icon changes visibility when clicked', function() {
             //test first click opening menu
             $('#menu-button').trigger("click");
-             var $body = $('body').attr('class');
+            $body = $('body').attr('class');
              expect($body).toBe('');
              //test second click closing menu
             $('#menu-button').trigger("click");
-             $body = $('body').attr('class');
+            $body = $('body').attr('class');
              expect($body).toBe('menu-hidden');
-
-
           });
     });
 
     /* a new test suite for the initial entries */
     describe('Initial Entries', function() {
+      var entry;
         //setup initial entries
          beforeEach(function(done) {
            loadFeed(0, done);
@@ -117,8 +94,7 @@ $(function() {
           * a single .entry element within the .feed container.
           */
          it('there is at least one feed', function(done) {
-           var entry = $('.feed a').children('.entry');
-
+           entry = $('.feed a').children('.entry');
            expect(entry.length).not.toBe(0);
            done();
          });
@@ -131,22 +107,24 @@ $(function() {
 
          //setup initial load and capture the first entry
          beforeEach(function(done) {
-
-           entry = $('.entry')[0].innerText;
-           loadFeed(1, done);
+           loadFeed(0, function() {
+             entry = $('.entry').text();
+             done();
+           });
+           loadFeed(1, function() {
+             entryChanged = $('.entry').text();
+             done();
+           });
          });
 
          /* a test that ensures when a new feed is loaded
           * by the loadFeed function that the content actually changes.
           */
          it('should change content when new feed is selected', function() {
-           entryChanged = $('.entry')[0].innerText;
-
            expect(entry).not.toBe(entryChanged);
-
          });
 
-         afterEach(function(done){
+         afterAll(function(done){
              //loading back the first feed
                  loadFeed(0, done);
          });
