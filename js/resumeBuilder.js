@@ -5,13 +5,13 @@ var bio = {
 		"mobile": "720-270-8840",
     "email": "carlvereen@gmail.com",
     "github": "Mehkai",
-    "twitter": "@carlvereen",
+    "twitter": "@pdjoy98",
     "blog": "Http://www.carlvereen.com",
     "location":"Denver, CO US"
 		},
 	"biopic": "images/face.png",
-	"welcomeMessage": "Passionate to find solutions!",
-	"skills": ["HTML5", "JavaScript", "CSS", "Agile", "python"],
+	"welcomeMessage": "Passionate about having fun, and solving problems!",
+	"skills": ["HTML5", "JavaScript", "CSS", "knockout", "jQuery", ],
   "displayName" : function bioName () {
        var formattedHeaderName = HTMLheaderName.replace("%data%",bio.name);
        var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
@@ -21,8 +21,8 @@ var bio = {
        $('#header').append(formattedWelcomeMessage);
        $('#header').prepend(formattedRole);
        $('#header').prepend(formattedHeaderName);
-      
-       
+
+
      },
   "displayContact" : function bioContact () {
        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -53,7 +53,7 @@ var bio = {
         for(var skills in bio.skills){
         var formattedSkills = HTMLskills.replace('%data%',bio.skills[skills]);
         $('#skills').append(formattedSkills);
-     
+
          }
        }
 	}
@@ -68,7 +68,7 @@ var education = {
    "majors" : ["Mathematics", "Secondary Education"],
    "dates" : 2005,
    "url" : "http://www.NAU.edu",
-   
+
   },
   {
    "name" : "University of Arizona ",
@@ -123,7 +123,7 @@ var education = {
     var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[courses].url);
     var formattedSubjectDetails = HTMLonlineSubjectDetails.replace("%data%",education.onlineCourses[courses].details);
     var formattedTitleSchool = formattedOnlineTitle + formattedOnlineSchool + formattedSubjectDetails;
-    
+
     $('.education-entry:last').append(HTMLonlineClasses);
     $('.education-entry:last').append(formattedTitleSchool);
     $('.education-entry:last').append(formattedOnlineDates);
@@ -135,6 +135,14 @@ var education = {
 
 var work = {
    "jobs" : [
+	 {
+    "employer" : "Sprint",
+    "title" : "Program Project Manager",
+    "location" : "Denver, Colorado, US",
+    "dates" : "2008 - Current",
+    "description" : "Project and task management, maintaining strong attention to detail. Excellent communication and interpersonal skills, able to provide clear communication to a wide audience on procedures, projects and status. Focus on analytical/problem solving skills",
+    "duties" : ["Project and task management skills", "Maintains strong attention to detail", "Strong communication and interpersonal skills", "Strong dedication to documenting processes, procedures, projects and status", "Strong analytical/problem solving skills"]
+	 },
    {
      "employer" : "Apartment Life",
      "title" : "Event Coordinator",
@@ -142,14 +150,6 @@ var work = {
      "dates" : "2004 - 2008",
      "description" : "Event planning for 300+ unit Apartment complex, including reporting on attendance to events and retention of tennants",
      "duties" : ["Event planning for 300+ unit Apartment complex", "Monthly Status Reporting"]
-   },
-   {
-    "employer" : "Sprint",
-    "title" : "Program Project Manager",
-    "location" : "Denver, Colorado, US",
-    "dates" : "2008 - Current",
-    "description" : "Project and task management, maintaining strong attention to detail. Excellent communication and interpersonal skills, able to provide clear communication to a wide audience on procedures, projects and status. Focus on analytical/problem solving skills",
-    "duties" : ["Project and task management skills", "Maintains strong attention to detail", "Strong communication and interpersonal skills", "Strong dedication to documenting processes, procedures, projects and status", "Strong analytical/problem solving skills"]
    }
    ],
    "display" : function displayWork(){
@@ -180,11 +180,11 @@ var projects = {
     "skills" : ["communication", "interpersonal"],
    },
    {
-    "title" : "switch",
-    "dates" : "completed success",
-    "description" : "change over phone router",
-    "images" : "images/p2_247x148.gif",
-    "skills" : ["communication", "interpersonal"],
+    "title" : "Classic Arcade Game Clone",
+    "dates" : "Completed 2015",
+    "description" : "Created a Classic Arcade game clone of frogger. I created this game using JavaScript, HTML5 Canvas and CSS. This is my first javascript game and I added a lot of new functionality that I had never programmed before. Including side scrolling, enemy regeneration and working with the canvas.",
+    "images" : "arcadeGame/projectScreenShot_100.jpg",
+    "skills" : ["JavaScript", " HTML5 Canvas", " Object Oriented Programming", " CSS"],
     }
    ],
   "display" : function projectDisplay() {
@@ -193,11 +193,13 @@ var projects = {
       var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.workProjects[project].dates);
       var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.workProjects[project].description);
       var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.workProjects[project].images);
+			var formattedprojectSkills = HTMLprojectSkills.replace("%data%", projects.workProjects[project].skills);
       $('#projects').append(HTMLprojectStart);
       $(".project-entry:last").append(formattedprojectTitle);
       $(".project-entry:last").append(formattedprojectDates);
       $(".project-entry:last").append(formattedprojectDescription);
-      $(".project-entry:last").append(formattedprojectImage);
+      $(".project-entry:last").append(formattedprojectSkills);
+			$(".project-entry:last").append(formattedprojectImage);
 
 
    }
@@ -215,30 +217,4 @@ bio.displaySkills();
 bio.displayContact();
 work.display();
 
-
-
-
-
-
-
-//var name1 = bio.name;
-
-
-//Function that will change the name to an international style
-function inName(name) {
-  name = name.trim().split(" ");
-  
-  name[1] = name[1].toUpperCase();
-  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-  var internationalName = name[0] + " " + name[1];
-
-     return internationalName;
-}
-
-$('#main').append(internationalizeButton);
 $('#mapDIV').append(googleMap);
-
-
-console.log(inName(bio.name));
-
