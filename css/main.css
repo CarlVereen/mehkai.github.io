@@ -1,8 +1,4 @@
 /*******************************************
-3ColorResume
-Author: office@kamsolutions.pl
-*******************************************/
-/*******************************************
 FONTS
 *******************************************/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
@@ -97,10 +93,14 @@ DEFAULT BOX
   content: '//';
   margin-right: 5px;
 }
+.box h2 span {
+  font-size: .75em;
+}
 .box p{
   font-size: 1.3em;
   line-height: 1.5em;
 }
+
 /*******************************************
 EDUCATION
 *******************************************/
@@ -183,6 +183,9 @@ EXPERIENCES
 .job .where{
   font-size: 1.4em;
   font-weight: bold;
+}
+.job .where a {
+  color: black;
 }
 .job .year{
   font-size: 1.3em;
