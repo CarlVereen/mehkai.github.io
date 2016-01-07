@@ -11,6 +11,11 @@ SETTINGS
 @-ms-viewport       { width: device-width; }
 @-o-viewport        { width: device-width; }
 @viewport           { width: device-width; }
+@media screen and (max-width: 767px) {
+  #education:before {
+    visibility: hidden;
+  }
+}
 /*******************************************
 BODY
 *******************************************/
