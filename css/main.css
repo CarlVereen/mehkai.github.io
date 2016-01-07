@@ -15,6 +15,12 @@ SETTINGS
   #education:before {
     visibility: hidden;
   }
+  #education .year {
+    display: block;
+  }
+  #education .description {
+    display: block;
+  }
 }
 /*******************************************
 BODY
