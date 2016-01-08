@@ -11,6 +11,7 @@ main_page_head = '''
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
@@ -101,15 +102,19 @@ main_page_content = '''
     </div>
     
     <!-- Main Page Content -->
-    <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Carl's Movie Trailers</a>
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href="http://www.carlvereen.com"><i class="fa fa-home fa-lg"> Home</i></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="navbar-brand" href="#">Carl's Movie Trailers</a></li>   
+             </ul>
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+
     <div class="container">
       {movie_tiles}
     </div>

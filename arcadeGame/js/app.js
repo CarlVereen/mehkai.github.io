@@ -40,11 +40,11 @@ Scenes.prototype.drawHouse = function () {
     ctx.drawImage(Resources.get('images/Window Tall.png'),  3 * this.xMove, 2 * this.yMove);
     ctx.drawImage(Resources.get('images/Door Tall Closed.png'),  2 * this.xMove, 2.3 * this.yMove);
     ctx.drawImage(Resources.get('images/Window Tall.png'),  1 * this.xMove, 2 * this.yMove);
-    
+
     ctx.drawImage(Resources.get('images/Roof North East.png'),  3 * this.xMove, 0.5 * this.yMove);
     ctx.drawImage(Resources.get('images/Roof North.png'),  2 * this.xMove, 0.5 * this.yMove);
     ctx.drawImage(Resources.get('images/Roof North West.png'),  1 * this.xMove, 0.5 * this.yMove);
-    
+
     ctx.drawImage(Resources.get('images/Roof South East.png'),  3 * this.xMove, 1.2 * this.yMove);
     ctx.drawImage(Resources.get('images/Roof South.png'),  2 * this.xMove, 1.3 * this.yMove);
     ctx.drawImage(Resources.get('images/Roof South West.png'),  1 * this.xMove, 1.2 * this.yMove);
@@ -59,7 +59,7 @@ Scenes.prototype.drawHouse = function () {
 
 };
 
-//create shadow screen for start of game 
+//create shadow screen for start of game
 Scenes.prototype.drawShadow = function () {
   ctx.globalAlpha = 0.5;
   ctx.fillStyle = 'gray';
@@ -112,7 +112,7 @@ ctx.fillText('To Start', canvas.width/2 -45, canvas.height/2 + 60);
 };
 
 
-//Check for edge collision with right screen edge for moving forward in the game to chase the bugs and get your 
+//Check for edge collision with right screen edge for moving forward in the game to chase the bugs and get your
 //house pieces back
 Scenes.prototype.checkEdgeCollision = function(){
 
@@ -128,7 +128,7 @@ Scenes.prototype.checkKeyPress = function (key) {
 if(key === 'down') {
   if(scene.order === 0) {
     scene.order = 1;
-    
+
 }
 
 }
@@ -136,20 +136,20 @@ if(key === 'down') {
 if(key === 'up') {
   if(scene.order === 1) {
     scene.order = 2;
-    
+
   }
 
 }
 
 //used to start the appearance of house pieces
 if(key === 'right' && player.x >= canvas.width -canvas.width/2.5){
-  
+
   if(pieceScenes.order === 0) {
     scene.order = 4;
     pieceScenes.order = 1;
     player.x = 0;
   }
-  
+
 }
 
 
@@ -178,7 +178,7 @@ Scenes.prototype.render = function() {
   //draw player house
       scene.drawHouse();
 
-  //cover in shadow 
+  //cover in shadow
      scene.drawShadow();
 
   // start menu
@@ -199,10 +199,10 @@ Scenes.prototype.render = function() {
 
       //check if player moves
       scene.checkKeyPress();
-      
+
  }
  if(this.order === 2) {
-     
+
 
      // draw player house
      scene.drawHouse();
@@ -214,37 +214,37 @@ Scenes.prototype.render = function() {
      if(this.xMove >= 450) {
        this.xMove = 600;
        scene.order = 3;
-       
+
      }
 
-     //draw house piece collection counter   
+     //draw house piece collection counter
      housePieceCollection.render();
  }
  if(scene.order >= 3){
-     
-     //draw house piece collection counter   
+
+     //draw house piece collection counter
      housePieceCollection.render();
 
       //check if all house picese have been collected otherwise create more on the canvas
        if(pieceScenes.order <= 8) {
         if(pieceScenes.order >= 1) {
-          
+
           ctx.drawImage(Resources.get(houseParts[pieceScenes.order - 1]),  xPosHousePiece[pieceScenes.order - 1], yPosHousePiece[pieceScenes.order - 1]);
           player.checkCollision(pieceScenes.order - 1);
 
-          
+
         }
        }
 
        //if all house pieces have been collected start end game scene for winning
        scene.checkWinCondition();
-       
-       //check if player has any life left 
+
+       //check if player has any life left
        player.checkLife();
 
        //used to initaite scene change for house piece collection
        scene.checkEdgeCollision();
-             
+
 
  }
 
@@ -305,7 +305,7 @@ var Enemy = function(creature) {
     this.speed = creature.speed || 5;
     this.x = 0;
     this.y = creature.y;
-    
+
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = creature.img ||'images/enemy-bug.png';
@@ -324,7 +324,7 @@ Enemy.prototype.checkCollision = function(){
       if(scene.order === 2){
         if(((this.x+30) >= scene.xMove && this.x <= (scene.xMove+40) /*&& (this.y >= scene.yMove && this.y <= (scene.yMove+40))*/) ) {
           scene.xMove = this.x;
-          
+
 
         }
 
@@ -345,10 +345,10 @@ Enemy.prototype.update = function(dt) {
     // multiplied any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    
+
     var gameTime = 0;
     gameTime += dt;
-    
+
     if(scene.order === 1){
 
     }
@@ -423,7 +423,7 @@ Player.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    
+
     if(player.y <= canvas.height/20){
       lifeBar.item++;
       player.life--;
@@ -439,12 +439,12 @@ Player.prototype.update = function(dt) {
 Player.prototype.render = function() {
 
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    
+
 };
 
 //method for handling keyboard input and initiating player mowement
 Player.prototype.handleInput = function(key){
-   
+
 
      if(key === 'left' && player.x >= canvas.width/5){
         player.x -= canvas.width/5;
@@ -457,9 +457,9 @@ Player.prototype.handleInput = function(key){
     }
      if(key === 'down' && player.y < canvas.height - canvas.height/2){
         player.y += canvas.height/7;
-  
+
     }
-  
+
 
 };
 
@@ -613,8 +613,8 @@ var player = new Player(playerStartX,playerStartY, 5);
           text : "Finally I am home,",
           text2 : "Guess I will head",
           text3 : "inside.",
-          text4 : "Press Up Arrow",
-          text5 : "to move Up"
+          text4 : "Use Arrow Keys",
+          text5 : "to move"
     });
     var secondSpeechBubble = new SpeechBubbles({
       x : player.x + 75,
