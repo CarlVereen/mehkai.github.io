@@ -1,0 +1,168 @@
+/**
+* FCC_BuildaSurveyForm
+* @author Carl Vereen
+* @version 0.1
+*/
+
+
+
+/* ============================ General Tags ============================ */
+body {
+  background-color: hsl(22, 100%, 15%);
+  color: hsl(22, 100%, 15%);
+}
+
+form {
+  grid-area: main;
+  background-color: white;
+  font-size: 1.5rem;
+  grid-gap: 1rem;
+  margin: 2%;
+  border: 0.25rem solid hsl(22, 100%, 65%);
+
+
+}
+
+h1 {
+  margin: 0;
+
+}
+
+
+
+
+/* ============================ Project Specific Tags =================== */
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    '. . main main . .'
+    'footer footer footer footer footer footer';
+
+}
+
+.survey-title {
+  grid-area: header;
+  align-self: center;
+  justify-self: center;
+  font-size: 2vw;
+  text-align: center;
+  color: hsl(22, 100%, 65%);
+}
+
+.survey-section{
+  grid-area: main;
+
+}
+
+#box1{
+  grid-area: box1;
+}
+
+#box2{
+  grid-area: box2;
+}
+
+#box3{
+  grid-area: box3;
+}
+
+#box4{
+  grid-area: box4;
+}
+
+#box5{
+  grid-area: box5;
+}
+
+.fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+     'header header'
+     'quest1 input1'
+     'quest2 input2'
+     'quest3 input3'
+     'quest4 input4';
+}
+
+.form-header {
+   grid-area: header;
+   font-size: 2.5vw;
+   text-align: center;
+   border-bottom: 0.25rem solid hsl(22, 100%, 65%);
+   border-top: 0.25rem solid hsl(22, 100%, 65%);
+}
+
+.questions1 {
+   grid-area: quest1;
+   align-self: start;
+   justify-self: end;
+   margin: 1%;
+   font-size: 1.5vw;
+
+}
+
+.questions2 {
+   grid-area: quest2;
+   align-self: start;
+   justify-self: end;
+   margin: 1%;
+   font-size: 1.5vw;
+}
+
+.questions3 {
+   grid-area: quest3;
+   align-self: start;
+   justify-self: end;
+   margin: 1%;
+   font-size: 1.5vw;
+}
+
+.questions4 {
+   grid-area: quest4;
+   align-self: start;
+   justify-self: end;
+   margin: 1%;
+   font-size: 1.5vw;
+}
+
+.input1 {
+   grid-area: input1;
+   align-self: center;
+   justify-self: start;
+   margin: 1%;
+   font-size: 1.5vw;
+
+}
+
+.input2 {
+   grid-area: input2;
+   align-self: center;
+   justify-self: start;
+   margin: 1%;
+   font-size: 1.5vw;
+}
+
+.input3 {
+   grid-area: input3;
+   align-self: center;
+   justify-self: start;
+   margin: 1%;
+   font-size: 1.5vw;
+}
+
+.input4 {
+   grid-area: input4;
+   align-self: center;
+   justify-self: start;
+   margin: 1%;
+   font-size: 1.5vw;
+}
+
+#description{
+  font-size: 1.5vw;
+  margin: 0;
+  padding: 0;
+}

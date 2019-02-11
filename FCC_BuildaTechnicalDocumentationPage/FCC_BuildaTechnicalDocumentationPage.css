@@ -1,0 +1,183 @@
+/**
+* FCC_BuildaTechnicalDocumentationPage
+* @author Carl Vereen
+* @version 0.1
+*/
+/*============================= Media Queries ===========================*/
+@media only screen and (min-width: 601px) {
+
+body{
+  font-size: 1.5rem;
+}
+
+nav li {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+
+}
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  body{
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+
+  }
+
+  nav li {
+    font-size: 1rem;
+  }
+
+}
+
+/* ============================ layout grid tags ======================== */
+
+/* .container {
+  display: flex;
+  flex-direction: row;
+} */
+
+.tech-content {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 25vw 60% 15%;
+  grid-template-areas:
+      ". content side"
+      ". footer footer";
+  padding: 0;
+
+
+}
+
+/* ============================ Menu / navigation ======================= */
+
+nav {
+  grid-area: nav;
+  position: fixed;
+  display: flex;
+  border-right: 0.2rem solid hsl(0, 0%, 45%);
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0;
+  background-color: hsl(0, 0%, 95%);
+  width: 25vw;
+  height: 100vh;
+}
+
+
+nav ul {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  border-top: 0.05rem solid hsl(0, 0%, 45%);
+  margin: 0;
+  padding: 3%;
+  color: hsl(0, 0%, 45%);
+
+}
+nav a {
+  color: hsl(0, 0%, 35%);
+}
+
+nav a:link {
+  text-decoration: none;
+}
+
+
+
+/* ============================ General Tags ============================ */
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+h2{
+  margin: 0;
+  align-self: center;
+  justify-self: center;
+  font-size: 1.55rem;
+  padding-bottom: 3%;
+  padding-top: 4%;
+  border-bottom: 0.25rem solid hsl(0, 0%, 45%);
+
+}
+
+h3 {
+  padding-left: 5%;
+}
+
+
+
+footer {
+  grid-area: footer;
+}
+
+code {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
+  margin-left: 3%;
+  margin-top: 2%;
+}
+
+p{
+  padding-left: 5%;
+}
+
+ul{
+  padding-left: 10%;
+}
+
+ol{
+  padding-left: 10%;
+}
+
+
+
+
+/* ============================ Project Specific Tags =================== */
+
+.tech-content {
+
+
+
+}
+
+#main-doc {
+  grid-area: content;
+
+  padding-left: 5%;
+  padding-top: 3%;
+}

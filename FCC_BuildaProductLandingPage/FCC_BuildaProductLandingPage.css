@@ -1,0 +1,271 @@
+/**
+* FCC_BuildaProductLandingPage
+* @author Carl Vereen
+* @version 0.1
+*/
+/*============================= Media Queries ===========================*/
+@media only screen and (min-width: 601px) {
+  .sell-bullet {
+    font-size: 2vw;
+  }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .img-bullet {
+    display: none;
+  }
+
+  .sell-bullet {
+    font-size: 20px;
+  }
+
+}
+
+
+
+/* ============================ General Tags ============================ */
+body {
+  margin: 0;
+}
+h1{
+  font-size: 5vw;
+  margin-bottom: 0;
+}
+
+img {
+  margin-top: 1.5%;
+  padding: 1.5%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: #333;
+  width: 100%;
+}
+
+label {
+  font-size: 5vw;
+}
+
+h4{
+  font-size: 2vw;
+  text-align: center;
+}
+
+p {
+  margin-left: 1rem;
+}
+
+
+/* ============================ Project Specific Tags =================== */
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-list {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+.nav-link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.nav-link:hover {
+  background-color: #111;
+}
+
+#header-img{
+  width: 50px;
+  height: 50px;
+  align-self: flex-start;
+  margin: -15px;
+  padding: 0;
+}
+
+.container  {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "dead dead dead"
+                       "header header header"
+                       "join join join"
+                       "prod prod prod"
+                       "vid vid vid"
+                       "cta cta cta"
+                       "footer footer footer";
+
+
+
+
+}
+
+.space {
+  grid-area: dead;
+  margin: 2%;
+}
+.title {
+  grid-area: header;
+  align-self: center;
+  justify-self: center;
+  font-size: 20vw;
+
+}
+
+.email-form {
+  grid-area: join;
+  align-self: center;
+  justify-self: center;
+
+}
+
+.email-cta {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 75% 25%;
+  grid-template-areas: "label label"
+                       "emailb subb"
+}
+
+#email-label {
+  grid-area: label;
+}
+
+#email {
+  grid-area: emailb;
+}
+
+#submit {
+  grid-area: subb;
+}
+
+.product-info {
+  display: grid;
+  grid-area: prod;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "icon1 sell1 sell1"
+                       "icon2 sell2 sell2"
+                       "icon3 sell3 sell3";
+}
+
+.product-video {
+  margin-top: 5%;
+  grid-area: vid;
+  align-self: center;
+  justify-self: center;
+}
+
+.call-to-action {
+  display: grid;
+  grid-area: cta;
+  grid-gap: 1em;
+  align-self: center;
+  justify-self: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "pimg1 pimg2 pimg3";
+
+}
+
+
+.img-bullet {
+    width: 10rem;
+    height: 10rem;
+
+}
+
+.sell-bullet {
+
+}
+
+#icon-bullet1 {
+  grid-area: icon1;
+  align-self: center;
+  justify-self: end;
+
+}
+
+#sell-points1 {
+  grid-area: sell1;
+  align-self: center;
+  justify-self: start;
+
+
+}
+#icon-bullet2 {
+  grid-area: icon2;
+  align-self: center;
+  justify-self: end;
+
+}
+
+#sell-points2 {
+  grid-area: sell2;
+  align-self: center;
+  justify-self: start;
+
+}
+#icon-bullet3 {
+  grid-area: icon3;
+  align-self: center;
+  justify-self: end;
+
+}
+
+#sell-points3 {
+  grid-area: sell3;
+  align-self: center;
+  justify-self: start;
+
+}
+
+#cta1 {
+  grid-area: pimg1;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: auto;
+  grid-template-rows: 10% 10% 70% 10%;
+}
+
+#cta2 {
+  grid-area: pimg2;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: auto;
+  grid-template-rows: 10% 10% 70% 10%;
+}
+
+#cta3 {
+  grid-area: pimg3;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: auto;
+  grid-template-rows: 10% 10% 70% 10%;
+}
+
+.cta-img {
+  width: 100%;
+  height: auto;
+  margin: 1%;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="FCC_BuildaProductLandingPage.css">
+  <title>FCC_BuildaProductLandingPage</title>
+</head>
+<body>
+  <header id="header"><!--User Story #1: My product landing page should have a header element with a corresponding id="header".-->
+    <nav id="nav-bar"> <!--User Story #3: Within the #header element I can see a nav element with a corresponding id="nav-bar".-->
+      <ul class="navbar"> <!-- User Story #4: I can see at least three clickable elements inside the nav element, each with the class nav-link. -->
+        <li class="nav-list"><a href="#top-part" class="nav-link" target="_self"><img src="https://images.onlinelabels.com/images/clip-art/GDJ/Raccoon%20Face%20Logo-265707.png" alt=" Fierce Racoon Violins company logo" id="header-img"> <!--User Story #2: I can see an image within the header element with a corresponding id="header-img". A company logo would make a good image here.--></a></li>
+        <li class="nav-list"><a href="#selling-points" class="nav-link" target="_self">Selling Bullets</a></li> <!--User Story #5: When I click a .nav-link button in the nav element, I am taken to the corresponding section of the landing page.-->
+        <li class="nav-list"><a href="#prod-video" class="nav-link" target="_self">Cool Video</a></li>
+        <li class="nav-list"><a href="#cta-buy" class="nav-link" target="_self">Buy it now link!</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="space">
+
+    </div>
+    <div class="title" id="top-part">
+      <h1 class="slogan">From Violin Zero to Violin Hero!</h1>
+    </div>
+    <div class="email-form">
+      <form class="get-email" action="https://www.freecodecamp.com/email-submit" method="post" id="form" target="_self">  <!--User Story #7: My landing page has a form element with a corresponding id="form". User Story #12: When I click the #submit element, the email is submitted to a static page (use this mock URL: https://www.freecodecamp.com/email-submit) that confirms the email address was entered and that it posted successfully.-->
+        <div class="email-cta">
+          <label for="email" id="email-label">Join our email list</label><br />
+          <input type="email" name="email" placeholder="myemail@website.com" id="email" required/> <!--User Story #8: Within the form, there is an input field with id="email" where I can enter an email address. User Story #9: The #email input field should have placeholder text to let the user know what the field is for.   User Story #10: The #email input field uses HTML5 validation to confirm that the entered text is an email address.-->
+          <input type="submit" name="" value="Join" id="submit"> <!--User Story #11: Within the form, there is a submit input with a corresponding id="submit".-->
+        </div>
+      </form>
+    </div>
+    <div class="product-info" id="selling-points">
+
+          <img id="icon-bullet1" class="img-bullet" src="http://ichef.bbci.co.uk/news/976/cpsprodpb/12787/production/_95455657_3312a880-230e-474c-b1d9-bb7c94f8b00e.jpg" alt="rocket">
+
+          <p id="sell-points1" class="sell-bullet"> Rocket your violin skills with our handmade custom designed violins. They teach you to play while you play.</p>
+
+          <img id="icon-bullet2" class="img-bullet" src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/WPVG_icon_2016.svg/1024px-WPVG_icon_2016.svg.png" alt="game controller">
+
+          <p id="sell-points2" class="sell-bullet"> This violin is a game changer. never has an instrument been made that moved your body to teach you how to play</p>
+
+          <img id="icon-bullet3" class="img-bullet" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7WSHP6-VxSKwLwqvPjiGbKaHdSC9WF8JkGmf-AZMAELU4rgdJBw" alt="power up mushroom">
+
+          <p id="sell-points3" class="sell-bullet">Everyone can now be a super violin player because of this key invention</p>
+
+    </div>
+    <div class="product-video" id="prod-video"><!--User Story #6: I can watch an embedded product video with id="video".-->
+      <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/Xa6iLFMGU_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="call-to-action" id="cta-buy">
+      <div id="cta1">
+        <h4>Brand new to Violin!</h4>
+        <p>
+          You should buy this if you have never played and have no money
+        </p>
+        <img class="cta-img" src="http://ae01.alicdn.com/kf/HTB1ULD6XTjxK1Rjy0Fnq6yBaFXaI/Robotime-DIY-3D-Puzzle-Model-Toy-Playing-Violin-Robot-Assembly-Music-Box-Building-Kits-Wood-Crafts.jpg_220x220q90.jpg" alt="Robot Playing Violin">
+        <button type="button" name="Buy Now">Buy Now</button>
+      </div>
+      <div id="cta2">
+        <h4>I can waste some cash!</h4>
+        <p>
+          You should buy this if you have never played and have little cash and want to learn fast
+        </p>
+        <img class="cta-img" src="https://media.istockphoto.com/photos/robot-plays-the-violin-picture-id184363676?k=6&m=184363676&s=612x612&w=0&h=EmfscJw3rKb61_59wqN86_lXqqoFsjj4At93NSdldhA=" alt="Better Robot Playing Violin">
+        <button type="button" name="Buy Now">Buy Now</button>
+      </div>
+      <div id="cta3">
+        <h4>Burn my money!</h4>
+        <p>
+          You should buy this if you have never played and have money to burn and want to learn the fastest
+        </p>
+        <img class="cta-img" src="https://www.roboticstoday.com/uploads/images/robots/robotpictures-all/ToyotaPartnerRobotver.8Violin-PlayingRobot_001.jpg" alt="Best Robot Playing Violin">
+        <button type="button" name="Buy Now">Buy Now</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

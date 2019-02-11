@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="FCC_BASF.css">
+  <title>Build a Survey Form -- What are some of your favorite board game</title>
+</head>
+<body>
+<div class="container">
+  <div class="survey-title">
+       <h1 id="title">Favorite Board Game Survey</h1>
+       <p id="description">
+         A short survey on board games and board game mechanics
+       </p>
+  </div>
+
+  <form action="" class="survey-section" id="survey-form">
+    <div class="fieldset">
+      <div class="form-header">
+        Personal Information
+      </div>
+      <section class="questions1">
+         <label class="grid-item1" for="name" id="name-label">First Name:</label>
+      </section>
+      <section class="input1">
+         <input class="grid-item1" type="text" name="First Name" placeholder="Carl" id="name" required>
+      </section>
+      <section class="questions2">
+         <label class="grid-item2" for="surname" id="surname-label">Last Name:</label>
+       </section>
+       <section class="input2">
+         <input class="grid-item2" type="text" name="Last Name" placeholder="Vereen" id="surname">
+      </section>
+
+      <section class="questions3">
+         <label class="grid-item3" for="userEmail" id="email-label">email:</label>
+       </section>
+       <section class="input3">
+         <input class="grid-item3" type="email" name="email" placeholder="address@email.com" id="email" required>
+      </section>
+
+      <section class="questions4">
+         <label class="grid-item4" for="gamesOwned" id="number-label">Games Owned:</label>
+       </section>
+       <section class="input4">
+         <input class="grid-item4" type="number" name="gameCount" placeholder="Ex: 3" min="0" max="500" id="number">
+      </section>
+    </div>
+    <div class="fieldset">
+      <div class="form-header">
+        Gaming background
+      </div>
+      <section class="questions1">
+         <label for="infoGames" id="gameNews-label">Games News:</label>
+      </section>
+      <section class="input1">
+         <select id="dropdown">
+           <option value="Board Game Geek">Board Game Geek</option>
+           <option value="Dice Tower">Dice Tower</option>
+           <option value="Rhado Runs">Rhado Runs</option>
+           <option value="Cool Stuff Inc">Cool Stuff Inc</option>
+         </select>
+      </section>
+      <section class="questions2">
+        <label for="numPlayers" id="numPlayers-label">Favortie Number of Players:</label>
+      </section>
+      <section class="input2">
+        <label for="numPL1" id="numPL1-label"><input type="radio" name="numberPlayers" value="1" id="numPL1">1</label>
+        <label for="numPL2" id="numPL2-label"><input type="radio" name="numberPlayers" value="2" id="numPL2">2</label>
+        <label for="numPL3" id="numPL3-label"><input type="radio" name="numberPlayers" value="3" id="numPL3">3</label>
+        <label for="numPL4" id="numPL4-label"><input type="radio" name="numberPlayers" value="4" id="numPL4">4</label>
+        <label for="numPL5" id="numPL5-label"><input type="radio" name="numberPlayers" value="5" id="numPl5">5</label>
+        <label for="numPL6" id="numPL6-label"><input type="radio" name="numberPlayers" value="6" id="numPL6">6</label>
+        <label for="numPL7p" id="numPL7p-label"><input type="radio" name="numberPlayers" value="7+" id="numPL7p">7+</label>
+      </section>
+      <section class="questions3">
+        <label for="oftenGame" id="oftenGame-label">How often do you play board games?</label>
+      </section>
+      <section class="input3">
+        <label for="numTimesPl30" id="numPl30-label"><input type="radio" name="oftenGame" value="Daily" id="numPl1">Daily</label><br />
+        <label for="numTimesPl3" id="numPl3-label"><input type="radio" name="oftenGame" value="1 to 3 times a week" id="numPl2">1 to 3 times a week</label><br />
+        <label for="numTimesPl5" id="numPl5-label"><input type="radio" name="oftenGame" value="5 or more times a week" id="numPl3">5 or more times a week</label><br />
+        <label for="numTimesPl2" id="numPl2-label"><input type="radio" name="oftenGame" value="Every other week" id="numPl4">Every other week</label><br />
+        <label for="numTimesPl1" id="numPl1-label"><input type="radio" name="oftenGame" value="Once a month" id="numPl5">Once a month</label><br />
+        <label for="numTimesPl0" id="numPl0-label"><input type="radio" name="oftenGame" value="When I can" id="numPl6">When I can</label><br />
+      </section>
+    </div>
+
+    <div class="fieldset">
+      <div class="form-header">
+        Gaming Style Questions
+      </div>
+      <section class="questions1">
+        <label for="favortieMech" id="favMech-label">What are your favorite Game Mechanics?</label>
+      </section>
+      <section class="input1">
+        <label for="favortieMech" id="favortieMech1-label"><input type="checkbox" name="favMech" value="Deck Builder" id="favMech1">Deck Builder</label>
+        <label for="favortieMech" id="favortieMech2-label"><input type="checkbox" name="favMech" value="Auction/Bidding" id="favMech2">Auction/Bidding</label>
+        <label for="favortieMech" id="favortieMech3-label"><input type="checkbox" name="favMech" value="Cooperative Play" id="favMech3">Cooperative Play</label><br />
+        <label for="favortieMech" id="favortieMech4-label"><input type="checkbox" name="favMech" value="Dice Rolling" id="favMech4">Dice Rolling</label>
+        <label for="favortieMech" id="favortieMech5-label"><input type="checkbox" name="favMech" value="Role Playing" id="favMech5">Role Playing</label>
+        <label for="favortieMech" id="favortieMech6-label"><input type="checkbox" name="favMech" value="Trick-taking" id="favMech6">Trick-taking</label>
+      </section>
+      <section class="questions2">
+        <label for="newGame" id="newGame-label">What game would you like to have someone design?</label>
+      </section>
+      <section class="input2">
+        <textarea name="newGameIdeas" placeholder="Thoughts about a new board game theme or mechanic." id="newGame" rows="10" cols="60"></textarea>
+      </section>
+    </div>
+    <div class="fieldset">
+      <section class="questions1">
+        <input type="submit" name="Submit" value="Submit" id="submit">
+      </section>
+    </div>
+
+
+
+
+  </form>
+</div>
+</body>
+</html>

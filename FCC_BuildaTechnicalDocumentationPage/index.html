@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="FCC_BuildaTechnicalDocumentationPage.css">
+  <title>FCC_BuildaTechnicalDocumentationPage--JavaScript Objects highlights</title>
+</head>
+<body>
+<div class="container">
+  <!-- <header>
+    <h1>FCC: Technical Documentation Page -- by Carl Vereen</h1>
+  </header> -->
+
+    <nav id="navbar">
+      <header>
+        <h1>JavaScript Objects highlights</h1>
+      </header>
+      <ul>
+        <li><a class="nav-link" href="#What_is_an_Object" target="_self">What is an Object</a></li>
+        <li><a class="nav-link" href="#Objects_and_properties" target="_self">Objects and properties</a></li>
+        <li><a class="nav-link" href="#Creating_new_objects" target="_self">Creating new objects</a></li>
+        <li><a class="nav-link" href="#Why_are_objects_important_to_Javascript" target="_self">Why are objects important to Javascript</a></li>
+        <li><a class="nav-link" href="#See_also" target="_self">See also</a></li>
+      </ul>
+
+    </nav>
+  <div class="tech-content">
+  <main class="" id="main-doc">
+    <section class="main-section" id="What_is_an_Object">
+      <header>
+        <h2 class="section-header">What is an Object</h3>
+      </header>
+      <p> JavaScript is designed on a simple object-based paradigm. An object is a collection of properties,
+        and a property is an association between a name (or key) and a value. A property's value can be a function,
+        in which case the property is known as a method. In addition to objects that are predefined in the browser,
+        you can define your own objects. This chapter describes how to use objects, properties, functions, and methods, and how to create your own objects.
+        <br />
+        <br />
+        Objects in JavaScript, just as in many other programming languages, can be compared to
+        objects in real life. The concept of objects in JavaScript can be understood with real life,
+        tangible objects. In JavaScript, an object is a standalone entity, with properties and type.
+        Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc.
+        The same way, JavaScript objects can have properties, which define their characteristics.
+      </p>
+    </section>
+    <section class="main-section" id="Objects_and_properties">
+      <header>
+        <h2 class="section-header">Objects and properties</h3>
+      </header>
+      <p> A JavaScript object has properties associated with it. A property of an object can be explained as a variable
+          that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except
+          for the attachment to objects. The properties of an object define the characteristics of the object. You access
+          the properties of an object with a simple dot-notation:
+          <code>objectName.propertyName</code>
+      </p>
+      <p>
+        Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive.
+        You can define a property by assigning it a value. For example, let's create an object named myCar and give it properties
+        named make, model, and year as follows:
+        <code>var myCar = new Object();
+              myCar.make = 'Ford';
+              myCar.model = 'Mustang';
+              myCar.year = 1969;
+        </code>
+      </p>
+
+
+    </section>
+    <section class="main-section" id="Creating_new_objects">
+      <header>
+        <h2 class="section-header">Creating new objects</h3>
+      </header>
+      <p>
+        There are 3 main ways to create new objects:
+      </p>
+      <ul><a href="#"></a>
+        <li><a class="obj-sec-link" href="#Using_object_initializers" target="_self">Using object initializers</a></li>
+        <li><a class="obj-sec-link" href="#Using_a_constructor_function" target="_self">Using a constructor function</a></li>
+        <li><a class="obj-sec-link" href="#Using_the_Object_create_method" target="_self">Using the Object.create method</a></li>
+      </ul>
+      <h3 id="Using_object_initializers">Using object initializers</h5>
+      <p>
+        In addition to creating objects using a constructor function, you can create objects using an object initializer.
+        Using object initializers is sometimes referred to as creating objects with literal notation. "Object initializer"
+        is consistent with the terminology used by C++. The syntax for an object using an object initializer is:
+        <code>
+          var obj = { property_1:   value_1,   // property_# may be an identifier...
+            2:            value_2,   // or a number...
+            // ...,
+            'property n': value_n }; // or a string
+        </code>
+        where obj is the name of the new object, each property_i is an identifier (either a name, a number, or a string literal),
+        and each value_i is an expression whose value is assigned to the property_i. The obj and assignment is optional; if you do
+        not need to refer to this object elsewhere, you do not need to assign it to a variable. (Note that you may need to wrap the
+        object literal in parentheses if the object appears where a statement is expected, so as not to have the literal be confused
+        with a block statement.) Object initializers are expressions, and each object initializer results in a new object being
+        created whenever the statement in which it appears is executed. Identical object initializers create distinct objects that
+        will not compare to each other as equal. Objects are created as if a call to new Object() were made; that is, objects made from
+        object literal expressions are instances of Object.
+      </p>
+      <h3 id="Using_a_constructor_function">Using a constructor function</h5>
+      <p>
+        Alternatively, you can create an object with these two steps:
+        <ol>
+          <li>
+            Define the object type by writing a constructor function.There is a strong convention, with good reason, to use a capital initial letter.
+          </li>
+          <li>
+            Create an instance of the object with new.
+          </li>
+        </ol>
+      </p>
+      <p>
+         To define an object type, create a function for the object type that specifies its name, properties, and methods. For example, suppose you want
+         to create an object type for cars. You want this type of object to be called Car, and you want it to have properties for make, model, and year.
+         To do this, you would write the following function:
+         <code>
+           function Car(make, model, year) {
+              this.make = make;
+              this.model = model;
+              this.year = year;
+            }
+         </code>
+         Notice the use of this to assign values to the object's properties based on the values passed to the function. Now you can create an
+         object called mycar as follows:
+         <code>
+           var mycar = new Car('Eagle', 'Talon TSi', 1993);
+         </code>
+
+      </p>
+      <h3 id="Using_the_Object_create_method">Using the Object.create method</h5>
+      <p>
+        Objects can also be created using the Object.create() method. This method can be very useful, because it allows you to choose the prototype object for the object you want to create, without having to define a constructor function.
+        <code>
+          // Animal properties and method encapsulation
+              var Animal = {
+                type: 'Invertebrates', // Default value of properties
+                displayType: function() {  // Method which will display type of Animal
+                  console.log(this.type);
+                }
+              };
+
+              // Create new animal type called animal1
+              var animal1 = Object.create(Animal);
+              animal1.displayType(); // Output:Invertebrates
+
+              // Create new animal type called Fishes
+              var fish = Object.create(Animal);
+              fish.type = 'Fishes';
+              fish.displayType(); // Output:Fishes
+        </code>
+      </p>
+
+    </section>
+    <section class="main-section" id="Why_are_objects_important_to_Javascript">
+      <header>
+        <h2 class="section-header">Why are objects important to Javascript</h3>
+      </header>
+      <p>
+        Objects make up the core of JavaScript as a language. Commonly used built-in constructs such as String,
+        Number, Date, Array, Object (duh) and Function are all constructor functions that return objects. So: ‘this text’
+        is constructed using the String constructor, and the output is actually an object.
+      </p>
+
+    </section>
+    <section class="main-section" id="See_also">
+      <header>
+        <h2 class="section-header">See also</h3>
+      </header>
+      <p>
+        For more information on JavaScript please use the following resources:
+        <ul>
+          <li>To dive deeper, read about the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model">details of javaScript's objects model.</a></li>
+          <li>To learn about ECMAScript 2015 classes (a new way to create objects), read the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">JavaScript classes</a> chapter.</li>
+          <li>For more detailed coverage of JavaScript Objects, including ECMAScript 5 additions for dealing with objects, read chapter 6 of JavaScript: The Definitive Guide 6th Edition.</li>
+        </ul>
+      </p>
+      <p> Sites used to build this information:
+      <ul>
+        <li>MDN web docs: mozilla -- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Working with objects</a></li>
+        <li>JavaScript is sexy -- <a href="http://javascriptissexy.com/javascript-objects-in-detail/">JavaScript Objects in Detail</a></li>
+        <li>code css styling from stackflow <a href="https://stackoverflow.com/users/3088349/maytham-%c9%af%c9%90%c9%a5%ca%87%ca%8e%c9%90%c9%af">maytham</a> </li>
+      </ul>
+      </p>
+
+    </section>
+
+  </main>
+  </div>
+
+</div>
+</body>
+</html>
+
+<!--
+-User Story #1: I can see a main element with a corresponding id="main-doc", which contains the page's main content (technical documentation).
+-User Story #2: Within the #main-doc element, I can see several section elements, each with a class of main-section. There should be a minimum of 5.
+-User Story #3: The first element within each .main-section should be a header element which contains text that describes the topic of that section.
+-User Story #4: Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+-User Story #5: The .main-section elements should contain at least 10 p elements total (not each).
+-User Story #6: The .main-section elements should contain at least 5 code elements total (not each).
+-User Story #7: The .main-section elements should contain at least 5 li items total (not each).
+-User Story #8: I can see a nav element with a corresponding id="navbar".
+-User Story #9: The navbar element should contain one header element which contains text that describes the topic of the technical documentation.
+-User Story #10: Additionally, the navbar should contain link (a) elements with the class of nav-link. There should be one for every element with the class main-section.
+-User Story #11: The header element in the navbar must come before any link (a) elements in the navbar.
+-User Story #12: Each element with the class of nav-link should contain text that corresponds to the header text within each section (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world").
+-User Story #13: When I click on a navbar element, the page should navigate to the corresponding section of the main-doc element (e.g. If I click on a nav-link element that contains the text "Hello world", the page navigates to a section element that has that id and contains the corresponding header.
+User Story #14: On regular sized devices (laptops, desktops), the element with id="navbar" should be shown on the left side of the screen and should always be visible to the user.
+User Story #15: My Technical Documentation page should use at least one media query. -->
